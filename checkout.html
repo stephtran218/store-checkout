@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="checkout.css" rel="stylesheet">
+    <script src="checkout.js" defer></script>
+</head>
+<body>
+    <div class="online-store">
+        <h1>Cashier Checkout</h1>
+        <div class="scanner">
+            <p>Scan Product Barcode:</p>
+            <input type="text" id="barcodeInput" placeholder="Scan barcode here">
+        </div>
+        <div class="amount">
+            <p>Quantity: </p>
+            <input type="text" id="quantity">
+        </div>
+        <button class="cartButton" id="addCartButton">Add to Cart</button>
+    </div>
+    <h2>Cart</h2>
+    <div class="cartHeading">
+            <h3>Item</h3>
+            <h3>Price</h3>
+            <h3>Quantity</h3>
+    </div>
+    <div id="cart"></div>
+    <ul id="cartItems"></ul>
+
+    <div class="totalPart">
+        <p>Total:</p>
+    <button class="checkout" id="checkoutButton">Checkout</button>
+    <p>Your grand total (including tax, 9.25%) is </p>
+    </div>
+</body>
+</html>

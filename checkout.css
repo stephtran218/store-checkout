@@ -1,0 +1,64 @@
+body {
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.online-store {
+    text-align: center;
+}
+
+.scanner,
+.amount,
+.cartButton {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 2rem;
+}
+
+.cartButton {
+    margin-top: 1.5rem;
+}
+
+p{
+    font-size: 1.2rem;
+    font-family: 'Arial', Helvetica, sans-serif;
+}
+
+button {
+    background-color: rgb(51, 189, 13);
+    color: white;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 7px;
+    border: none;
+}
+
+.cartHeading {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 12rem;
+    /* position: relative;
+    left: 1.2rem; */
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 6em;
+    border: 1px solid black;
+    border-radius: 0.8rem;
+    padding: 0.5rem 3rem;
+}
+
+.totalPart {
+    margin: 0.5rem 2rem; 
+}
+
+.items p {
+    flex: 1;
+    text-align: center;
+}
