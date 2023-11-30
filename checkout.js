@@ -4,7 +4,8 @@ const addButtonElement = document.getElementById("addCartButton")
 const itemsList = document.getElementById("cartItems")
 const checkoutButtonElement = document.getElementById("checkoutButton")
 const cart = document.getElementById("cart")
-const quantityInput = document.getElementById("quantity")
+const totalElement = document.getElementById("total")
+var runningTotal = 0;
 
 //2. Create object to hold the barcode, item name, and price
 const inventory = {
@@ -78,28 +79,38 @@ const inventory = {
     if(inventory.hasOwnProperty(barcodeInput)){
         let itemInfo = inventory[barcodeInput]
         let numOfItems = quantityInput;
+        console.log (quantityInput)
 
+        let tempPrice = (numOfItems) * parseFloat(itemInfo.price);
+        console.log (tempPrice)
+
+        updateTotal(tempPrice);
+        
         const itemElement = document.createElement("div")
         itemElement.classList.add("items");
 
         const itemLabel = document.createElement("p");
         
         itemLabel.innerText = itemInfo.itemName;
-        itemLabel.classList.add("pizza");
         const itemPrice = document.createElement("p");
         itemPrice.innerText = itemInfo.price;
-        itemPrice.classList.add("pizza");
         const itemQuantity = document.createElement("p");
         itemQuantity.innerText = numOfItems
-        itemQuantity.classList.add("pizza");
 
         itemElement.appendChild(itemLabel);
         itemElement.appendChild(itemPrice);
         itemElement.appendChild(itemQuantity);
 
-        cart.appendChild(itemElement)
+        cart.appendChild(itemElement);
         
     }
     
  }
+
+ function updateTotal (tempPrice){
+    runningTotal += tempPrice;
+    totalElement.innerText = "Total: $" + runningTotal;
+
+ }
+ 
  document.getElementById('addCartButton').addEventListener('click', addToCart);
