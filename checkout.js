@@ -76,41 +76,67 @@ const inventory = {
     //This will take count of the quantity of the items
     const quantityInput = document.getElementById("quantity").value;
 
+    //Once the barcode is scanned, the hasOwnProperty will look through the objects and find it
     if(inventory.hasOwnProperty(barcodeInput)){
         let itemInfo = inventory[barcodeInput]
         let numOfItems = quantityInput;
-        console.log (quantityInput)
 
         let tempPrice = (numOfItems) * parseFloat(itemInfo.price);
-        console.log (tempPrice)
 
+        // let tempQuantity = (numOfItems) * parseFloat(itemInfo.quantityInput);
+
+        //This is calling the function updateTotal to add up the expenses as things get added to the cart
         updateTotal(tempPrice);
         
+        //This creates a div for the item that will appear on the cart 
         const itemElement = document.createElement("div")
+        //This creates a class for the scanned items the div created in line 90
         itemElement.classList.add("items");
 
+        //This creates a p element so that the name of the item can appear on the shopping cart list
         const itemLabel = document.createElement("p");
         
+        //This changes the text to the item's name on the list of things in the cart
         itemLabel.innerText = itemInfo.itemName;
+        //This creates a p element for the price to appear
         const itemPrice = document.createElement("p");
+        //This changes the text to the item's price
         itemPrice.innerText = itemInfo.price;
+        //This creates a p element for the quantity to appear 
         const itemQuantity = document.createElement("p");
+        //This changes the text to the amount of items in the cart
         itemQuantity.innerText = numOfItems
 
+        //This will take all the p tags created and put them all into the itemElement's div
         itemElement.appendChild(itemLabel);
         itemElement.appendChild(itemPrice);
         itemElement.appendChild(itemQuantity);
 
+        //This makes the itemElement(price, label, quantitiy) a child of the cart 
         cart.appendChild(itemElement);
-        
     }
+
+    
     
  }
 
+ //This function will update the price as things get added to the cart
  function updateTotal (tempPrice){
+    //The variable running total holds all the prices that are being added everytme something gets added to the cart
     runningTotal += tempPrice;
+    //This changes the text so that the total can get updated with the most current price 
     totalElement.innerText = "Total: $" + runningTotal;
-
  }
+
+ //This function is supposed to update the quantity as the same things are being scanned multiple times and won't appear twice
+//  function updateQuantity (){
+//     for(let i = 0; i < cartItems.length; i++){
+//         const itemelement = cartItems [i];
+//         const barcode = itemElement.getAttribute("barcode")
+//         const quantitiy = itemElement.getAttribute("barcode")
+
+//     }
+//  }
  
+ //When the user clicks the add to cart button, the barcode that got scanned will be searched in the code
  document.getElementById('addCartButton').addEventListener('click', addToCart);

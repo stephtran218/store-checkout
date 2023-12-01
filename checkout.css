@@ -42,13 +42,12 @@ button {
     justify-content: space-between;
     margin: 0 12rem;
     gap: 100px
-    /* position: relative;
-    left: 1.2rem; */
 }
 
 .cartHeading h3{
     flex: 1;
     text-align: center;
+    text-decoration: underline;
 }
 
 .items {
@@ -60,8 +59,12 @@ button {
     padding: 0.5rem 3rem;
 }
 
-.totalPart {
-    margin: 0.5rem 2rem; 
+.totalPart{
+    margin: 0.5rem 2rem;
+}
+
+.totalPart p{
+    margin: 2rem 0rem;
 }
 
 .items p {
