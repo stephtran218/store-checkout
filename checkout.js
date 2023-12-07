@@ -55,7 +55,7 @@ const inventory = {
         itemName: "Multiport Adapter",
         price: "25.99"
     },
-    "":{
+    "B07G6JT1XS":{
         itemName: "Scissors (20ct.)",
         price: "23.99"
     },
