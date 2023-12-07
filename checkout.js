@@ -170,7 +170,7 @@ const inventory = {
     let finalTotal = runningTotal + runningTotal * salesTax;
 
     // Use the correct variable name here: taxedTotalElement
-    taxedTotalElement.innerText = "Your grand total (including tax, 9.25%) is: $" + finalTotal;
+    taxedTotalElement.innerText = "Your grand total (including tax, 9.25%) is: $" + finalTotal.toFixed(2);
 
     runningTotal = 0;
 }
